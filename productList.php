@@ -24,7 +24,7 @@ $products = $db->showAll();
             </div>
             <div class="headerButton">
                 <button type="button" onclick="window.location.href='/add-product';">ADD</button>
-                <button id="#delete-product-btn" type="submit" form="form-mass-delete">MASS DELETE</button>
+                <button id="delete-product-btn" type="submit" form="form-mass-delete">MASS DELETE</button>
             </div>
         </div>
         <hr>

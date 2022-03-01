@@ -16,10 +16,10 @@
             </div>
             <div class="headerButton">
                 <button type="submit" form="product_form">
-                    SAVE
+                    Save
                 </button>
                 <button type="button" onclick="window.location.href='/';">
-                    CANCEL
+                    Cancel
                 </button>
             </div>
         </div>
@@ -27,9 +27,9 @@
     </header>
 
     <form id="product_form" action="/submit-product" method="POST">
-        <p><label>SKU</label><input id="#sku" type="text" name="sku" /></p>
-        <p><label>Name</label><input id="#name" type="text" name="name" /></p>
-        <p><label>Price($)</label><input id="#price" type="text" name="price" /></p>
+        <p><label>SKU</label><input id="sku" type="text" name="sku" /></p>
+        <p><label>Name</label><input id="name" type="text" name="name" /></p>
+        <p><label>Price($)</label><input id="price" type="text" name="price" /></p>
 
         <p><label>Type Switcher</label>
             <select id="productType" name="productType">
@@ -45,19 +45,19 @@
     <div id="form-0" style="display: none;"></div>
 
     <div id="form-DVD" style="display: none;">
-        <p><label>Size(MB)</label><input id="#size" type="text" name="size" /></p>
+        <p><label>Size(MB)</label><input id="size" type="text" name="size" /></p>
         <p>Please provide DVD size.</p>
     </div>
 
     <div id="form-Book" style="display: none;">
-        <p><label>Weight(KG)</label><input id="#weight" type="text" name="weight" /></p>
+        <p><label>Weight(KG)</label><input id="weight" type="text" name="weight" /></p>
         <p>Please provide book weight.</p>
     </div>
 
     <div id="form-Furniture" style="display: none;">
-        <p><label>Height(CM)</label><input id="#height" type="text" name="height" /></p>
-        <p><label>Width(CM)</label><input id="#width" type="text" name="width" /></p>
-        <p><label>Length(CM)</label><input id="#length" type="text" name="length" /></p>
+        <p><label>Height(CM)</label><input id="height" type="text" name="height" /></p>
+        <p><label>Width(CM)</label><input id="width" type="text" name="width" /></p>
+        <p><label>Length(CM)</label><input id="length" type="text" name="length" /></p>
         <p>Please provide dimensions in HxWxL format.</p>
     </div>
 
