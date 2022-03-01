@@ -27,12 +27,12 @@
     </header>
 
     <form id="product_form" action="/submit-product" method="POST">
-        <p><label>SKU</label><input id="sku" type="text" name="sku" /></p>
-        <p><label>Name</label><input id="name" type="text" name="name" /></p>
-        <p><label>Price($)</label><input id="price" type="text" name="price" /></p>
+        <p><label>SKU</label><input id="sku" type="text" name="sku" required /></p>
+        <p><label>Name</label><input id="name" type="text" name="name" required /></p>
+        <p><label>Price($)</label><input id="price" type="text" name="price" required /></p>
 
         <p><label>Type Switcher</label>
-            <select id="productType" name="productType">
+            <select id="productType" name="productType" required>
                 <option value="0">Type Switcher</option>
                 <option value="DVD">DVD</option>
                 <option value="Book">Book</option>
@@ -45,19 +45,19 @@
     <div id="form-0" style="display: none;"></div>
 
     <div id="form-DVD" style="display: none;">
-        <p><label>Size(MB)</label><input id="size" type="text" name="size" /></p>
+        <p><label>Size(MB)</label><input id="size" type="text" name="size" required /></p>
         <p>Please provide DVD size.</p>
     </div>
 
     <div id="form-Book" style="display: none;">
-        <p><label>Weight(KG)</label><input id="weight" type="text" name="weight" /></p>
+        <p><label>Weight(KG)</label><input id="weight" type="text" name="weight" required /></p>
         <p>Please provide book weight.</p>
     </div>
 
     <div id="form-Furniture" style="display: none;">
-        <p><label>Height(CM)</label><input id="height" type="text" name="height" /></p>
-        <p><label>Width(CM)</label><input id="width" type="text" name="width" /></p>
-        <p><label>Length(CM)</label><input id="length" type="text" name="length" /></p>
+        <p><label>Height(CM)</label><input id="height" type="text" name="height" required></p>
+        <p><label>Width(CM)</label><input id="width" type="text" name="width" required /></p>
+        <p><label>Length(CM)</label><input id="length" type="text" name="length" required /></p>
         <p>Please provide dimensions in HxWxL format.</p>
     </div>
 
