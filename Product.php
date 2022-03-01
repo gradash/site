@@ -2,14 +2,11 @@
 ini_set('display_errors', 1);
 //print_r($_POST);
 
-
-
 interface Persistable
 {
     public function persistFields(): array;
     public function persistTable(): string;
 }
-
 
 class Product implements Persistable
 {
@@ -19,12 +16,11 @@ class Product implements Persistable
     protected $name;
     protected $price;
     protected $db;
-    
 
     public function __construct(array $formData)
     {
-        foreach($formData as $formField => $formValue) {
-             $methodName = 'set'.ucfirst($formField);
+        foreach ($formData as $formField => $formValue) {
+            $methodName = 'set' . ucfirst($formField);
             if (method_exists($this, $methodName)) {
                 $this->$methodName($formValue);
             }
@@ -77,7 +73,6 @@ class Product implements Persistable
         return $this->price = $price;
     }
 
-
     public function persistFields(): array
     {
         return [
@@ -99,26 +94,22 @@ class Product implements Persistable
 //require_once "Book.php";
 //require_once "Furniture.php";
 
-
-
 $formData = $_POST;
 
 /*if ($_POST) {
-    if($_POST["productType"] === "DVD"){
-        $x = (new DVD($formData));
-    } 
-    if($_POST["productType"] === "Book"){
-        $x = (new Book($formData));
-    } 
-    if($_POST["productType"] === "Furniture"){
-        $x = (new Furniture($formData));
-    }
-    $x->persist();
+if($_POST["productType"] === "DVD"){
+$x = (new DVD($formData));
+}
+if($_POST["productType"] === "Book"){
+$x = (new Book($formData));
+}
+if($_POST["productType"] === "Furniture"){
+$x = (new Furniture($formData));
+}
+$x->persist();
 
-    header('Location: /');
+header('Location: /');
 
 }
 
-
-*/
-
+ */

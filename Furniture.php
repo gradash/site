@@ -40,4 +40,3 @@ class Furniture extends Product
         return $this->length = $length;
     }
 }
-

@@ -3,7 +3,7 @@
 class Book extends Product
 {
     protected $weight;
- 
+
     public function persistFields(): array
     {
         $fields = parent::persistFields();
@@ -20,5 +20,3 @@ class Book extends Product
         return $this->weight = $weight;
     }
 }
-
-
