@@ -1,6 +1,8 @@
 .parent {
+    
     display: flex;
     flex-flow: wrap;
+    height: 100%;
 }
 
 .child {
@@ -44,4 +46,10 @@ hr {
 
 .headerButton button {
     margin: 0 10px;
+}
+
+#product_form label {
+    margin-left: 30px;
+    width: 120px;
+    display: inline-block;
 }

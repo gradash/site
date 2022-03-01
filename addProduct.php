@@ -11,21 +11,27 @@
 <body>
     <header>
         <div class="headerContainer">
-            <div class="headerName" text-align=left>Add Product</div>
+            <div class="headerName" text-align=left>
+                Add Product
+            </div>
             <div class="headerButton">
-                <input type="submit" form="product_form" value="SAVE">
-                <button type="button" onclick="window.location.href='/';">CANCEL</button>
+                <button type="submit" form="product_form">
+                    SAVE
+                </button>
+                <button type="button" onclick="window.location.href='/';">
+                    CANCEL
+                </button>
             </div>
         </div>
         <hr>
     </header>
 
     <form id="product_form" action="/submit-product" method="POST">
-        <p>SKU <input id="#sku" type="text" name="sku" /></p>
-        <p>Name <input id="#name" type="text" name="name" /></p>
-        <p>Price($) <input id="#price" type="text" name="price" /></p>
+        <p><label>SKU</label><input id="#sku" type="text" name="sku" /></p>
+        <p><label>Name</label><input id="#name" type="text" name="name" /></p>
+        <p><label>Price($)</label><input id="#price" type="text" name="price" /></p>
 
-        <p>Type Switcher
+        <p><label>Type Switcher</label>
             <select id="productType" name="productType">
                 <option value="0">Type Switcher</option>
                 <option value="DVD">DVD</option>
@@ -34,22 +40,25 @@
             </select>
         </p>
         <div id="type_container"></div>
-
     </form>
+
     <div id="form-0" style="display: none;"></div>
 
     <div id="form-DVD" style="display: none;">
-        <p>Size(MB)<input id="#size" type="text" name="size" /></p>
+        <p><label>Size(MB)</label><input id="#size" type="text" name="size" /></p>
+        <p>Please provide DVD size.</p>
     </div>
 
     <div id="form-Book" style="display: none;">
-        <p>Weight(KG)<input id="#weight" type="text" name="weight" /></p>
+        <p><label>Weight(KG)</label><input id="#weight" type="text" name="weight" /></p>
+        <p>Please provide book weight.</p>
     </div>
 
     <div id="form-Furniture" style="display: none;">
-        <p>Height(CM)<input id="#height" type="text" name="height" /></p><br />
-        <p>Width(CM)<input id="#width" type="text" name="width" /></p><br />
-        <p>Length(CM)<input id="#length" type="text" name="length" /></p>
+        <p><label>Height(CM)</label><input id="#height" type="text" name="height" /></p>
+        <p><label>Width(CM)</label><input id="#width" type="text" name="width" /></p>
+        <p><label>Length(CM)</label><input id="#length" type="text" name="length" /></p>
+        <p>Please provide dimensions in HxWxL format.</p>
     </div>
 
     <script>
@@ -63,7 +72,7 @@
     };
     </script>
 
-    <footer>
+    <footer class="footer">
         <?php require_once "footer.php";?>
     </footer>
 </body>

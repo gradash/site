@@ -1,2 +1,2 @@
-        <hr>
-        <p align="center">Scandiweb Test assignment</p>
+<hr>
+<p align="center">Scandiweb Test assignment</p>

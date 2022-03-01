@@ -76,6 +76,7 @@ class Product implements Persistable
     public function persistFields(): array
     {
         return [
+            'id' => $this->id,
             'productType' => $this->productType,
             'sku' => $this->sku,
             'name' => $this->name,

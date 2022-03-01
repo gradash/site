@@ -4,6 +4,9 @@ require_once 'Db.php';
 
 $db = new Db();
 $products = $db->showAll();
+
+var_dump($products)
+
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +40,7 @@ foreach ($products as $product) {
     ?>
             <div class="child">
 
-                <input id="product-<?=$product->getSku()?>" class="delete-checkbox"
-                    name="product-<?=$product->getSku()?>" type="checkbox" value="product-<?=$product->getSku()?>" />
+                <input class="delete-checkbox" name="product-<?=$product->getId()?>" type="checkbox" />
                 <br /><br />
 
                 <?=$product->getSku()?><br />
@@ -68,7 +70,7 @@ if ($product->getProductType() === "DVD") {
 
     </form>
 
-    <footer>
+    <footer class="footer">
         <?php require_once "footer.php";?>
     </footer>
 
