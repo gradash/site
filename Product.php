@@ -40,6 +40,10 @@ class Product implements Persistable
         return $this->id;
     }
 
+    public function setId($id)
+    {
+        return $this->id = $id;
+    }
     public function getProductType()
     {
         return $this->productType;

@@ -5,8 +5,6 @@ require_once 'Db.php';
 $db = new Db();
 $products = $db->showAll();
 
-var_dump($products)
-
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +38,7 @@ foreach ($products as $product) {
     ?>
             <div class="child">
 
-                <input class="delete-checkbox" name="product-<?=$product->getId()?>" type="checkbox" />
+                <input class="delete-checkbox" name="<?=$product->getId()?>" type="checkbox" />
                 <br /><br />
 
                 <?=$product->getSku()?><br />
