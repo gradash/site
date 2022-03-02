@@ -28,8 +28,8 @@ class DB
 
         //var_dump($query);
 
-        $sth = $this->connection->prepare($query);
-        $sth->execute($object->persistFields());
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute($object->persistFields());
 
     }
 
@@ -54,6 +54,16 @@ class DB
 
         }
         return $products;
+    }
+
+    public function massDelete($key)
+    {
+
+        $query = ('DELETE FROM shopDB WHERE id = (' . $key . ')');
+        //var_dump($query); die;
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+
     }
 
 }
