@@ -8,7 +8,7 @@ interface Persistable
     public function persistTable(): string;
 }
 
-class Product implements Persistable
+abstract class Product implements Persistable
 {
     protected $id;
     protected $productType;
