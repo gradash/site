@@ -6,14 +6,16 @@ require_once "Furniture.php";
 
 class DB
 {
-    private $user = "root";
-    private $pass = "";
-    private $connection;
+    private $user = "id18466934_pollux";
+    private $pass = "sOEc&ErAxHS4o";
+    private static $connection;
 
     public function __construct()
     {
-        $this->connection = new PDO('mysql:host=localhost;dbname=myshop', $this->user, $this->pass);
-        $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if(!self::$connection){
+        self::$connection = new PDO('mysql:host=localhost;dbname=id18466934_shop', $this->user, $this->pass);
+        self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
 
     }
 
@@ -28,7 +30,7 @@ class DB
 
         //var_dump($query);
 
-        $stmt = $this->connection->prepare($query);
+        $stmt =self::$connection->prepare($query);
         $stmt->execute($object->persistFields());
 
     }
@@ -36,9 +38,10 @@ class DB
     public function showAll()
     {
 
-        $query = $this->connection->query('SELECT * FROM shopDB ORDER BY sku');
+        $query = self::$connection->query('SELECT * FROM shopDB ORDER BY sku');
         $products = [];
-        while ($row = $query->fetch()) {
+        $all = $query->fetchAll();
+        foreach ($all as $row) {
 
             if ($row['productType'] === 'Book') {
                 $products[] = new Book($row);
@@ -61,7 +64,7 @@ class DB
 
         $query = ('DELETE FROM shopDB WHERE id = (' . $key . ')');
         //var_dump($query); die;
-        $stmt = $this->connection->prepare($query);
+        $stmt = self::$connection->prepare($query);
         $stmt->execute();
 
     }

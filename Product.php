@@ -89,7 +89,7 @@ class Product implements Persistable
     }
     public function persistTable(): string
     {
-        return 'shopdb';
+        return 'shopDB';
     }
 
 }
