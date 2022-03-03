@@ -4,16 +4,20 @@ $formData = $_POST;
 
 if ($_POST) {
     if ($_POST["productType"] === "DVD") {
-        $x = (new DVD($formData));
+        $x = new DVD($formData);
     }
     if ($_POST["productType"] === "Book") {
-        $x = (new Book($formData));
+        $x = new Book($formData);
     }
     if ($_POST["productType"] === "Furniture") {
-        $x = (new Furniture($formData));
+        $x = new Furniture($formData);
     }
-    $x->persist();
 
-    header('Location: /');
+    try {
+        $x->persist();
+        header('Location: /');
+    } catch (Exception $e) {
+        echo "Sorry, this SKU already exists.";
+    }
 
 }

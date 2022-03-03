@@ -4,11 +4,11 @@ ini_set('display_errors', 1);
 
 interface Persistable
 {
-    public function persistFields(): array;
-    public function persistTable(): string;
+    public function persistFields(): array; // fields that will be saved in db
+    public function persistTable(): string; // db table name
 }
 
-abstract class Product implements Persistable
+class Product implements Persistable
 {
     protected $id;
     protected $productType;
@@ -17,6 +17,7 @@ abstract class Product implements Persistable
     protected $price;
     protected $db;
 
+// reading data from _POST and forming set method calls.
     public function __construct(array $formData)
     {
         foreach ($formData as $formField => $formValue) {
@@ -28,13 +29,13 @@ abstract class Product implements Persistable
 
         $this->db = new DB();
     }
-
+// calling database method to save data
     public function persist()
     {
-        // TODO try catch
         $this->db->persist($this);
     }
 
+// getters and setters
     public function getId()
     {
         return $this->id;
@@ -76,7 +77,7 @@ abstract class Product implements Persistable
     {
         return $this->price = $price;
     }
-
+// fields to save
     public function persistFields(): array
     {
         return [
@@ -87,6 +88,7 @@ abstract class Product implements Persistable
             'price' => $this->price,
         ];
     }
+// dbtable name
     public function persistTable(): string
     {
         return 'shopDB';
@@ -94,27 +96,4 @@ abstract class Product implements Persistable
 
 }
 
-//require_once "Db.php";
-//require_once "Dvd.php";
-//require_once "Book.php";
-//require_once "Furniture.php";
-
 $formData = $_POST;
-
-/*if ($_POST) {
-if($_POST["productType"] === "DVD"){
-$x = (new DVD($formData));
-}
-if($_POST["productType"] === "Book"){
-$x = (new Book($formData));
-}
-if($_POST["productType"] === "Furniture"){
-$x = (new Furniture($formData));
-}
-$x->persist();
-
-header('Location: /');
-
-}
-
- */
